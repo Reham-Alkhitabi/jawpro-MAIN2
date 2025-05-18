@@ -1,0 +1,395 @@
+
+:root {
+  --cosmic-deep: #0F0C24;
+  --cosmic-twilight: #2A1B5E;
+  --cosmic-nebula: #6E44FF;
+  --cosmic-starlight: #E0D6FF;
+  --cosmic-accent: #BA68C8;
+  --cosmic-success: #00E676;
+  
+  --bg-light: linear-gradient(145deg, #F8F7FF 0%, #EBE6FF 100%);
+  --text-light: #5A2D8C;
+  --card-bg-light: rgba(255, 255, 255, 0.92);
+  --border-light: rgba(110, 68, 255, 0.3);
+  
+  --bg-dark: linear-gradient(145deg, #05030F 0%, #1A1442 100%);
+  --text-dark: #E0D6FF;
+  --card-bg-dark: rgba(15, 12, 36, 0.85);
+  --border-dark: rgba(138, 99, 255, 0.6);
+  
+  /* Effects */
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --warp-effect: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.contact-us {
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.contact-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(248, 188, 253,0.8) 0.5px, transparent 1px),
+    radial-gradient(circle at 85% 15%, rgba(248, 188, 253,0.6) 3px, transparent 1.5px),
+    radial-gradient(circle at 25% 70%, rgba(248, 188, 253,0.5) 0.5px, transparent 1px),
+    radial-gradient(circle at 75% 65%, rgba(248, 188, 253,0.7) 2px, transparent 1.5px);
+  background-size: 200px 200px;
+  opacity: 0.9;
+  animation:     star-drift 30s linear infinite;
+}
+
+.dark .contact-us::before {
+  background-image: 
+  radial-gradient(circle at 15% 20%, rgba(255,255,255,0.8) 0.5px, transparent 1px),
+  radial-gradient(circle at 85% 15%, rgba(255,255,255,0.6) 1px, transparent 1.5px),
+  radial-gradient(circle at 25% 70%, rgba(255,255,255,0.5) 0.5px, transparent 1px),
+  radial-gradient(circle at 75% 65%, rgba(255,255,255,0.7) 1px, transparent 1.5px);
+  opacity: 0.6;
+  animation: 
+    twinkle 5s infinite alternate,
+    star-drift 30s linear infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes star-drift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 100px; }
+}
+
+/* Form Container */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-us-contact-form {
+  background: var(--card-bg-light);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: 
+    0 0 30px rgba(110, 68, 255, 0.2),
+    inset 0 0 20px rgba(110, 68, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.6s var(--warp-effect);
+}
+
+.dark .contact-us-contact-form {
+  background: var(--card-bg-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: 
+    0 0 40px rgba(138, 99, 255, 0.4),
+    inset 0 0 30px rgba(138, 99, 255, 0.3);
+}
+
+.contact-us-contact-form:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+}
+
+.dark .contact-us-contact-form:hover {
+  box-shadow: 
+    0 0 60px rgba(138, 99, 255, 0.6),
+    inset 0 0 40px rgba(138, 99, 255, 0.4);
+}
+
+/* Form Elements */
+.contact-us-title {
+  font-size: 3rem;
+  background: linear-gradient(90deg,#a4a3f0, #f589df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.dark .contact-us-title {
+    background: linear-gradient(90deg,#5796fa, #f589df, #5796fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  text-shadow: 0 0 15px rgba(138, 99, 255, 0.5);
+
+}
+
+.contact-us-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cosmic-nebula), 
+    transparent);
+}
+
+.dark .contact-us-title::after {
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--cosmic-nebula), 
+    var(--cosmic-accent),
+    transparent);
+  height: 4px;
+}
+.contact-us-title::before {
+  content: '✉️';
+  color: #fff;
+  margin-right: 0.5rem;
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+.contact-us-sub-title {
+  color: var(--text-light);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.dark .contact-us-sub-title {
+  color: var(--cosmic-starlight);
+  opacity: 0.9;
+}
+
+/* Form Fields */
+.contact-us-contact-form label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.dark .contact-us-contact-form label {
+  color: var(--cosmic-starlight);
+  text-shadow: 0 0 5px rgba(138, 99, 255, 0.3);
+}
+
+.contact-us-contact-form input,
+.contact-us-contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.dark .contact-us-contact-form input,
+.dark .contact-us-contact-form textarea {
+  background: rgba(42, 27, 94, 0.7);
+  border: 1px solid var(--border-dark);
+  color: var(--cosmic-starlight);
+}
+
+.contact-us-contact-form input:focus,
+.contact-us-contact-form textarea:focus {
+  outline: none;
+  border-color: var(--cosmic-nebula);
+  box-shadow: 0 0 0 2px rgba(110, 68, 255, 0.2);
+  background: rgba(110, 68, 255, 0.1);
+}
+
+.dark .contact-us-contact-form input:focus,
+.dark .contact-us-contact-form textarea:focus {
+  border-color: var(--cosmic-accent);
+  box-shadow: 0 0 0 3px rgba(186, 104, 200, 0.3);
+}
+
+.contact-us-contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+/* Submit Button */
+.contact-us-submit {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, 
+    var(--cosmic-primary) 0%, 
+    var(--cosmic-secondary) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--form-transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+}
+.dark .contact-us-submit {
+  background: linear-gradient(135deg, 
+    var(--cosmic-nebula) 0%, 
+    var(--cosmic-accent) 100%);
+  box-shadow: 0 5px 25px rgba(138, 99, 255, 0.5);
+}
+
+.contact-us-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(110, 68, 255, 0.4);
+}
+
+.dark .contact-us-submit:hover {
+  box-shadow: 0 8px 40px rgba(110, 68, 255, 0.7);
+}
+
+.contact-us-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Button Loading State */
+.contact-us-submit:disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: button-spin 1s linear infinite;
+}
+
+@keyframes button-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Message */
+.contact-us-success-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 230, 118, 0.1);
+  border: 1px solid rgba(0, 230, 118, 0.3);
+  border-radius: 8px;
+  color: var(--cosmic-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  animation: cosmicFadeIn 0.6s ease-out;
+}
+
+.dark .contact-us-success-message {
+  background: rgba(0, 230, 118, 0.2);
+  border: 1px solid rgba(0, 230, 118, 0.5);
+  color: #82FFB8;
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+}
+
+@keyframes cosmicFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Container */
+.contact-us-animation {
+  position: relative;
+  height: 100%;
+}
+
+.contact-us-contact-animation {
+  filter: drop-shadow(0 0 20px rgba(110, 68, 255, 0.3));
+  transition: transform 0.6s ease;
+}
+
+.dark .contact-us-contact-animation {
+  filter: drop-shadow(0 0 25px rgba(138, 99, 255, 0.7));
+}
+
+.contact-us-animation:hover .contact-us-contact-animation {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-us-animation {
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 3rem 1.5rem;
+  }
+  
+  .contact-us-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-us-contact-form {
+    padding: 1.5rem;
+  }
+}
+
+.dark .contact-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: 
+    radial-gradient(circle at 30% 40%, 
+      rgba(138, 99, 255, 0.08) 0%, 
+      transparent 40%),
+    radial-gradient(circle at 70% 60%, 
+      rgba(130, 177, 255, 0.05) 0%, 
+      transparent 40%);
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  animation: nebula-pulse 8s infinite alternate;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}

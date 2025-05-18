@@ -1,0 +1,144 @@
+:root {
+  --bg-light: linear-gradient(135deg, rgba(248, 247, 255, 0.98), rgba(235, 230, 255, 0.98));
+  --text-primary-light: #5a2d8c;
+  --text-secondary-light: #3a1d5e;
+  --text-tertiary-light: #6e44ff;
+  --btn-light: #6e44ff;
+  --btn-hover-light: #5e2d9e;
+
+  --bg-dark: linear-gradient(135deg, rgba(12, 10, 24, 0.98), rgba(20, 15, 45, 0.98));
+  --text-primary-dark: #c9b8ff;
+  --text-secondary-dark: #a78aff;
+  --text-tertiary-dark: #8a63ff;
+  --btn-dark: #8a63ff;
+  --btn-hover-dark: #5e2d9e;
+}
+
+/* Layout */
+.intro-page-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ background: var(--bg-color) url("./images/Qbg.png") no-repeat center;
+  padding: 2rem;
+  transition: background 0.3s ease;
+}
+
+.dark .intro-page-screen {
+ background: var(--bg-color) url("./images/Qbgd.png") no-repeat center;
+}
+
+/* Card */
+.intro-page-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(110, 68, 255, 0.1);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1s ease;
+}
+
+.dark .intro-page-card {
+  background: rgba(18, 15, 35, 0.85);
+  box-shadow: 0 10px 25px rgba(138, 99, 255, 0.2);
+}
+
+/* Icon */
+.intro-page-icon {
+  font-size: 4rem;
+  color: var(--text-tertiary-light);
+  animation: popIn 0.8s ease;
+}
+
+.dark .intro-page-icon {
+  color: var(--text-tertiary-dark);
+}
+
+/* Heading */
+.intro-page-heading {
+  font-size: 2.6rem;
+  margin: 1rem 0;
+  color: var(--text-primary-light);
+  font-family: "Orbitron", sans-serif;
+}
+
+.dark .intro-page-heading {
+  color: var(--text-primary-dark);
+}
+
+/* Guidelines */
+.intro-page-guidelines-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--text-secondary-light);
+  line-height: 1.8;
+}
+
+.dark .intro-page-guidelines-list {
+  color: var(--text-secondary-dark);
+}
+
+.intro-page-check-icon {
+  color: var(--text-accent-light);
+  margin-right: 0.5rem;
+}
+
+.dark .intro-page-check-icon {
+  color: var(--text-accent-dark);
+}
+
+/* Button */
+.intro-page-start-test-button {
+  background: linear-gradient(135deg, var(--btn-light), var(--btn-hover-light));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(110, 68, 255, 0.2);
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-page-start-test-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(110, 68, 255, 0.4);
+}
+
+.dark .intro-page-start-test-button {
+  background: linear-gradient(135deg, var(--btn-dark), var(--btn-hover-dark));
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

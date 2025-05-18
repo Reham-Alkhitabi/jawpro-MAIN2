@@ -1,0 +1,370 @@
+.maincom-main {
+  min-height: 100vh;
+  background: var(--bg-light);
+  color: var(--text-primary-light);
+  padding: 2rem;
+  gap: 6rem;
+}
+
+body.dark .maincom-main {
+  background: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+/* Left Section - Filters */
+.maincom-left-section {
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 250px;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+}
+
+.maincom-search-bar input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.maincom-search-bar input:focus {
+  outline: none;
+  border-color: var(--cosmic-secondary);
+  box-shadow: 0 0 0 2px rgba(110, 68, 255, 0.2);
+}
+
+body.dark .maincom-search-bar input {
+  background: rgba(30, 25, 50, 0.9);
+  border-color: var(--border-dark);
+  color: var(--text-primary-dark);
+}
+
+.maincom-left-section button {
+  background: rgba(110, 68, 255, 0.1);
+  color: var(--text-primary-light);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.4;
+  width: 11rem;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-size: 1.05rem;
+  text-transform: capitalize;
+}
+
+.maincom-left-section button:hover {
+  background: rgba(110, 68, 255, 0.2);
+}
+
+.maincom-left-section button.active {
+  background: linear-gradient(135deg, var(--cosmic-secondary), var(--cosmic-primary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(110, 68, 255, 0.3);
+}
+
+body.dark .maincom-left-section button {
+  background: var(--text-primary-dark);
+  color: var(--text-accent-light);}
+
+body.dark .maincom-left-section button:hover {
+  background: rgba(138, 99, 255, 0.2);
+}
+
+body.dark .maincom-left-section button.active {
+  background: linear-gradient(135deg, var(  --text-accent-dark), var(--cosmic-dark-primary));
+}
+
+/* Right Section - Course Cards */
+.maincom-right-section {
+  flex: 1;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.maincom-card {
+  width: 300px;
+  background: var(--card-bg-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.maincom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(110, 68, 255, 0.2);
+}
+
+body.dark .maincom-card {
+  background: var(--card-bg-dark);
+  border-color: var(--border-dark);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .maincom-card:hover {
+  box-shadow: 0 12px 30px rgba(138, 99, 255, 0.3);
+}
+
+/* Updated Card Image Styles */
+.maincom-card > img {
+  border-radius: 5px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-light);
+  transition: transform 0.3s ease;
+}
+
+.maincom-card:hover > img {
+  transform: scale(1.02);
+}
+
+body.dark .maincom-card > img {
+  border-color: var(--border-dark);
+}
+
+.maincom-box {
+  padding: 1.5rem;
+}
+
+.maincom-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary-light);
+}
+
+body.dark .maincom-title {
+  color: var(--text-primary-dark);
+}
+
+.maincom-sub-title {
+  color: var(--text-secondary-light);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+body.dark .maincom-sub-title {
+  color: var(--text-secondary-dark);
+}
+
+/* Updated Price Styles */
+.maincom-price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary-light);
+  margin-bottom: 1.5rem;
+}
+
+.riyal-symbol {
+  width: 15px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+body.dark .maincom-price {
+  color: var(--text-primary-dark);
+}
+
+.maincom-icons {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.maincom-icons button {
+  background: rgba(110, 68, 255, 0.1);
+  color: var(--cosmic-secondary);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.maincom-icons button.bookmarked {
+  background: rgba(110, 68, 255, 0.2);
+  color: var(--cosmic-primary);
+  font-weight: 600;
+}
+
+.maincom-icons button:hover {
+  background: rgba(110, 68, 255, 0.2);
+}
+
+.maincom-link {
+  background: linear-gradient(135deg, var(--cosmic-secondary), var(--cosmic-primary));
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.maincom-link:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(110, 68, 255, 0.3);
+}
+
+.icon-arrow-right2 {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.maincom-link:hover .icon-arrow-right2 {
+  transform: translateX(3px);
+}
+
+body.dark .maincom-icons button {
+  background: rgba(138, 99, 255, 0.1);
+  color: var(--cosmic-dark-secondary);
+}
+
+body.dark .maincom-icons button.bookmarked {
+  background: rgba(138, 99, 255, 0.25);
+  color: var(--cosmic-dark-primary);
+}
+
+body.dark .maincom-link {
+  background: linear-gradient(135deg, var(--cosmic-dark-secondary), var(--cosmic-dark-primary));
+}
+
+/* Notification Modal */
+.notification-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.notification-modal-content {
+  background: var(--card-bg-light);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.notification-modal-content h2 {
+  color: var(--text-primary-light);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.notification-modal-content p {
+  color: var(--text-secondary-light);
+  margin-bottom: 1.5rem;
+}
+
+.notification-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.notification-ok-btn {
+  background: linear-gradient(135deg, var(--cosmic-secondary), var(--cosmic-primary));
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notification-ok-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(110, 68, 255, 0.3);
+}
+
+body.dark .notification-modal-content {
+  background: var(--card-bg-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark .notification-modal-content h2 {
+  color: var(--text-primary-dark);
+}
+
+body.dark .notification-modal-content p {
+  color: var(--text-secondary-dark);
+}
+
+body.dark .notification-ok-btn {
+  background: linear-gradient(135deg, var(--cosmic-dark-secondary), var(--cosmic-dark-primary));
+}
+
+/* No Results */
+.no-results {
+  color: var(--text-secondary-light);
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+body.dark .no-results {
+  color: var(--text-secondary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .maincom-main {
+    flex-direction: column;
+  }
+  
+  .maincom-left-section {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .maincom-left-section button {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .maincom-card {
+    width: 100%;
+  }
+  
+  .maincom-left-section button {
+    white-space: normal;
+    line-height: 1.2;
+    padding: 0.6rem;
+  }
+}

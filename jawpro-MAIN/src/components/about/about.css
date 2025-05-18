@@ -1,0 +1,491 @@
+:root {
+  --bg-light: linear-gradient(
+    135deg,
+    rgba(248, 247, 255, 0.98) 0%,
+    rgba(235, 230, 255, 0.98) 100%
+  );
+  --text-primary-light: #5a2d8c;
+  --text-secondary-light: #3a1d5e;
+  --text-tertiary-light: #6e44ff;
+  --text-accent-light: #ba68c8;
+  --border-light: rgba(110, 68, 255, 0.3);
+  --card-bg-light: rgba(255, 255, 255, 0.85);
+  --btn-light: #6e44ff;
+  --btn-hover-light: #5e2d9e;
+
+  --bg-dark: linear-gradient(
+    135deg,
+    rgba(12, 10, 24, 0.98) 0%,
+    rgba(20, 15, 45, 0.98) 100%
+  );
+  --text-primary-dark: #c9b8ff;
+  --text-secondary-dark: #a78aff;
+  --text-tertiary-dark: #8a63ff;
+  --text-accent-dark: #82b1ff;
+  --border-dark: rgba(138, 99, 255, 0.4);
+  --card-bg-dark: rgba(18, 15, 35, 0.9);
+  --btn-dark: #8a63ff;
+  --btn-hover-dark: #5e2d9e;
+
+  /* Shared */
+  --container-padding: 4.8rem;
+  --padding: 1rem;
+  --margin: 1rem;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.aboutpage-us {
+  padding: var(--container-padding);
+  background: var(--bg-light);
+  background-size: 300px 300px, cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  font-family: "Georgia", sans-serif;
+  line-height: 1.6;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .aboutpage-us {
+  background: var(--bg-dark);
+  background-size: 300px 300px, cover;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.aboutpage-us::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(110, 68, 255, 0.05) 0%,
+    transparent 70%
+  );
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.dark .aboutpage-us::before {
+  background: radial-gradient(
+    circle,
+    rgba(138, 99, 255, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.aboutpage-title {
+  font-size: 3rem;
+  color: var(--text-primary-light);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(90, 45, 140, 0.2);
+  position: relative;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-title {
+  color: var(--text-primary-dark);
+  text-shadow: 0 2px 8px rgba(201, 184, 255, 0.3);
+}
+
+.aboutpage-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--text-tertiary-light), transparent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-title::after {
+  background: linear-gradient(90deg, var(--text-tertiary-dark), transparent);
+}
+
+.aboutpage-sub-title {
+  font-size: 1.4rem;
+  color: var(--text-secondary-light);
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-sub-title {
+  color: var(--text-secondary-dark);
+}
+
+.aboutpage-section-title {
+  font-size: 2.2rem;
+  color: var(--text-tertiary-light);
+  margin: 3rem 0 1.5rem;
+  transition: var(--transition);
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.dark .aboutpage-section-title {
+  color: var(--text-tertiary-dark);
+}
+
+.aboutpage-section-title::before {
+  content: "✦";
+  position: absolute;
+  left: -1.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--text-tertiary-light);
+  transition: var(--transition);
+}
+
+.dark .aboutpage-section-title::before {
+  color: var(--text-tertiary-dark);
+}
+
+.aboutpage-card {
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(110, 68, 255, 0.05),
+    inset 0 0 16px rgba(110, 68, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .aboutpage-card {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(138, 99, 255, 0.1),
+    inset 0 0 24px rgba(138, 99, 255, 0.1);
+}
+
+.aboutpage-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--text-tertiary-light),
+    var(--text-accent-light)
+  );
+  opacity: 0.5;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-card::before {
+  background: linear-gradient(
+    90deg,
+    var(--text-tertiary-dark),
+    var(--text-accent-dark)
+  );
+}
+
+.aboutpage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(110, 68, 255, 0.2),
+    inset 0 0 24px rgba(110, 68, 255, 0.1);
+}
+
+.dark .aboutpage-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(138, 99, 255, 0.3),
+    inset 0 0 32px rgba(138, 99, 255, 0.2);
+}
+
+.aboutpage-card:hover::before {
+  opacity: 1;
+}
+
+.aboutpage-list {
+  padding-left: 0;
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.aboutpage-list li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2.5rem;
+  transition: var(--transition);
+}
+
+.aboutpage-list li::before {
+  content: "🜚";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text-tertiary-light);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-list li::before {
+  color: var(--text-tertiary-dark);
+}
+
+.aboutpage-list li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary-light);
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-list li strong {
+  color: var(--text-secondary-dark);
+}
+
+.aboutpage-team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.aboutpage-team-member {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.dark .aboutpage-team-member {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--border-dark);
+}
+
+.aboutpage-team-animation {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--text-tertiary-light) 0%,
+    transparent 70%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-team-animation {
+  background: radial-gradient(
+    circle at center,
+    var(--text-tertiary-dark) 0%,
+    transparent 70%
+  );
+}
+
+.aboutpage-team-info {
+  flex: 1;
+}
+
+.aboutpage-team-name {
+  font-size: 1.3rem;
+  color: var(--text-primary-light);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-team-name {
+  color: var(--text-primary-dark);
+}
+
+.aboutpage-team-role {
+  font-size: 0.95rem;
+  color: var(--text-tertiary-light);
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.dark .aboutpage-team-role {
+  color: var(--text-tertiary-dark);
+}
+
+.aboutpage-team-email {
+  font-size: 0.85rem;
+  color: var(--text-secondary-light);
+  transition: var(--transition);
+}
+
+.dark .aboutpage-team-email {
+  color: var(--text-secondary-dark);
+}
+
+.aboutpage-team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--border-light),
+    inset 0 0 24px rgba(110, 68, 255, 0.1);
+}
+
+.dark .aboutpage-team-member:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-dark),
+    inset 0 0 32px rgba(138, 99, 255, 0.2);
+}
+
+.aboutpage-team-member:hover .aboutpage-team-animation {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--text-tertiary-light);
+}
+
+.dark .aboutpage-team-member:hover .aboutpage-team-animation {
+  box-shadow: 0 0 20px var(--text-tertiary-dark);
+}
+
+@keyframes cosmicPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.aboutpage-team-member:hover .aboutpage-team-animation {
+  animation: cosmicPulse 2s infinite ease-in-out;
+}
+
+.aboutpage-card:hover {
+  animation: float 3s infinite ease-in-out;
+}
+
+.aboutpage-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: var(--btn-light);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(110, 68, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .aboutpage-btn {
+  background: var(--btn-dark);
+  box-shadow: 0 4px 16px rgba(138, 99, 255, 0.4);
+}
+
+.aboutpage-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(110, 68, 255, 0.4);
+  background: var(--btn-hover-light);
+}
+
+.dark .aboutpage-btn:hover {
+  box-shadow: 0 8px 32px rgba(138, 99, 255, 0.6);
+  background: var(--btn-hover-dark);
+}
+
+.aboutpage-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  transition: var(--transition);
+}
+
+.aboutpage-btn:hover::after {
+  left: 100%;
+}
+
+@media (max-width: 768px) {
+  .aboutpage-us {
+    padding: 2rem;
+  }
+
+  .aboutpage-title {
+    font-size: 2.2rem;
+  }
+
+  .aboutpage-section-title {
+    font-size: 1.8rem;
+  }
+
+  .aboutpage-team-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutpage-title {
+    font-size: 1.8rem;
+  }
+
+  .aboutpage-sub-title {
+    font-size: 1.1rem;
+  }
+
+  .aboutpage-card {
+    padding: 1.5rem;
+  }
+
+  .aboutpage-team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutpage-team-animation {
+    margin-bottom: 1rem;
+  }
+}

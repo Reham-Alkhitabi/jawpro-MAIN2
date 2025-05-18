@@ -1,0 +1,469 @@
+:root {
+  --nebula-purple: #5A2D8C;
+  --quantum-blue: #6E44FF;
+  --stellar-teal: #4FC3F7;
+  --void-black: #0C0A18;
+  --cosmic-mist: #F8F7FF;
+  --supernova: #FF9100;
+
+  --cosmic-card-light: rgba(255, 255, 255, 0.92);
+  --cosmic-card-dark: rgba(18, 15, 35, 0.92);
+  
+  /* Animations */
+  --pulse: pulse 6s infinite ease-in-out;
+  --float: float 8s infinite ease-in-out;
+  --twinkle: twinkle 5s infinite alternate;
+}
+
+/* Base Styles */
+.coursepage-course-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 3rem;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(110, 68, 255, 0.15);
+  background-size: 400px 400px, cover;
+  animation: var(--float);
+}
+
+body.dark .coursepage-course-container {
+  background-size: 400px 400px, cover;
+  box-shadow: 0 0 80px rgba(138, 99, 255, 0.25);
+}
+
+/* Header */
+.coursepage-course-container h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--nebula-purple), var(--quantum-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
+}
+
+.coursepage-course-container h1::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--quantum-blue), transparent);
+  margin: 1rem auto 0;
+  border-radius: 3px;
+  animation: var(--pulse);
+}
+
+/*  Card */
+.coursepage-course-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: var(--cosmic-card-light);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 0 40px rgba(110, 68, 255, 0.1),
+              inset 0 0 30px rgba(110, 68, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(110, 68, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+body.dark .coursepage-course-card {
+  background: var(--cosmic-card-dark);
+  box-shadow: 0 0 60px rgba(138, 99, 255, 0.2),
+              inset 0 0 40px rgba(138, 99, 255, 0.1);
+  border-color: rgba(138, 99, 255, 0.25);
+}
+
+.coursepage-course-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 68, 255, 0.05) 0%, transparent 70%);
+  animation: var(--twinkle);
+}
+
+/*  Content */
+.coursepage-course-info {
+  position: relative;
+  z-index: 2;
+}
+
+.coursepage-course-info p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--nebula-purple);
+}
+
+body.dark .coursepage-course-info p {
+  color: var(--stellar-teal);
+}
+
+.coursepage-course-info ul {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.coursepage-course-info li {
+  margin-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.coursepage-course-info li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--quantum-blue);
+  font-size: 1.5rem;
+  animation: var(--twinkle);
+}
+
+body.dark .coursepage-course-info li::before {
+  color: var(--stellar-teal);
+}
+
+/* Image */
+.coursepage-course-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+  border: 2px solid rgba(110, 68, 255, 0.3);
+}
+
+.coursepage-course-image:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(110, 68, 255, 0.4);
+}
+
+.coursepage-course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.coursepage-course-image:hover img {
+  transform: scale(1.05);
+}
+
+/*  Buttons */
+.coursepage-course-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.coursepage-preview-button,
+.coursepage-buy-button {
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+}
+
+.coursepage-preview-button {
+  background: transparent;
+  color: var(--quantum-blue);
+  border: 2px solid var(--quantum-blue);
+}
+
+.coursepage-buy-button {
+  background: linear-gradient(135deg, var(--quantum-blue), var(--stellar-teal));
+  color: white;
+  box-shadow: 0 5px 25px rgba(110, 68, 255, 0.4);
+}
+
+.coursepage-preview-button:hover,
+.coursepage-buy-button:hover {
+  transform: translateY(-5px);
+}
+
+.coursepage-buy-button:hover {
+  box-shadow: 0 8px 35px rgba(110, 68, 255, 0.6);
+}
+
+.coursepage-buy-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--stellar-teal), var(--quantum-blue));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.coursepage-buy-button:hover::after {
+  opacity: 1;
+}
+
+/* Constellation Navigation */
+.coursepage-back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--nebula-purple);
+  border-radius: 12px;
+  color: var(--nebula-purple);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark .coursepage-back-button {
+  border-color: var(--stellar-teal);
+  color: var(--stellar-teal);
+}
+
+.coursepage-back-button:hover {
+  background: rgba(110, 68, 255, 0.1);
+  transform: translateX(-5px);
+}
+
+.coursepage-back-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--quantum-blue), var(--stellar-teal)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.coursepage-back-button:hover::before {
+  opacity: 1;
+}
+
+.icon-arrow-left2 {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .coursepage-course-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .coursepage-course-image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coursepage-course-container {
+    padding: 2rem;
+  }
+  
+  .coursepage-course-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  .coursepage-course-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coursepage-course-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+  
+  .coursepage-course-container h1 {
+    font-size: 2rem;
+  }
+  
+  .coursepage-course-actions {
+    flex-direction: column;
+  }
+  
+  .coursepage-preview-button,
+  .coursepage-buy-button {
+    width: 100%;
+  }
+}
+
+
+/* Cosmic Course Page Icons */
+.coursepage-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+  padding: 12px 0;
+  border-top: 3px solid var(--border-light);
+  
+}
+
+/* Bookmark Icon */
+.icon-bookmarks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.icon-bookmarks:hover {
+  color: var(--text-tertiary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(110, 68, 255, 0.15);
+}
+/* Bookmarked State */
+.icon-bookmarks[data-bookmarked="true"] {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.icon-bookmarks[data-bookmarked="true"] svg {
+  color: #10b981;
+}
+
+/* Share Icons */
+.share-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary-light);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.share-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--text-tertiary-light), var(--text-accent-light));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.share-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 16px rgba(110, 68, 255, 0.2);
+}
+
+.share-icon:hover::before {
+  opacity: 1;
+}
+
+/* Individual icon colors */
+.share-icon[title*="Twitter"]:hover svg {
+  color: #1DA1F2;
+}
+
+.share-icon[title*="WhatsApp"]:hover svg {
+  color: #25D366;
+}
+
+.share-icon[title*="Copy link"]:hover svg {
+  color: var(--text-tertiary-light);
+}
+
+/* Dark Mode Styles */
+.dark .coursepage-icons {
+  border-color: var(--border-dark);
+}
+
+.dark .icon-bookmarks {
+  color: var(--text-secondary-dark);
+  background: rgba(30, 25, 60, 0.8);
+}
+
+.dark .icon-bookmarks:hover {
+  color: var(--text-tertiary-dark);
+}
+
+.dark .share-icon {
+  background: rgba(30, 25, 60, 0.8);
+  color: var(--text-secondary-dark);
+}
+
+.dark .share-icon::before {
+  background: linear-gradient(135deg, var(--text-tertiary-dark), var(--text-accent-dark));
+}
+
+/* Click Animation */
+@keyframes cosmic-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(110, 68, 255, 0.4); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); box-shadow: 0 0 0 10px rgba(110, 68, 255, 0); }
+}
+
+.icon-clicked {
+  animation: cosmic-pulse 0.6s;
+}

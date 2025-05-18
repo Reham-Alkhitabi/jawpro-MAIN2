@@ -1,0 +1,103 @@
+.footer {
+  justify-content: space-between;
+  padding-bottom: 1.9rem;
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Star decoration */
+.footer::before {
+  content: "✦";
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  font-size: 0.8rem;
+  color: rgba(186, 104, 200, 0.5);
+  font-weight: bold;
+
+  animation: twinkle 3s infinite alternate;
+}
+
+/* Planet decoration */
+.footer::after {
+  content: "⚝";
+  position: absolute;
+  right: 10%;
+  top: 30%;
+    font-size: 1.2rem;
+  color: rgba(138, 99, 255, 0.3);
+  animation: twinkle 3s infinite alternate;
+
+  font-weight: bold;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0 auto 1.5rem;
+  list-style: none;
+}
+
+.footer li {
+  margin: 0;
+}
+
+.footer a,
+.footer Link {
+  color:#5780c0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark .footer a,
+.dark .footer Link {
+  color: #a78aff;
+}
+
+.footer a:hover,
+.footer Link:hover {
+  color: #8a63ff;
+}
+
+.footer p {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  font-size: 1rem;
+  color: rgba(118, 206, 250, 0.5);
+}
+
+.dark .footer p {
+  color: #8a63ff;
+}
+
+/* Animations */
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer::before,
+  .footer::after {
+    display: none;
+  }
+}

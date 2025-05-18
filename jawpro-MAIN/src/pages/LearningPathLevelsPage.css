@@ -1,0 +1,68 @@
+.path-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.progress-bar-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  cursor: pointer;
+  text-align: center;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: lightgray;
+  color: white;
+  line-height: 40px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.step.active .circle,
+.step.completed .circle {
+  background: #4caf50;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.rating-section {
+  margin: 2rem 0;
+}
+
+.quit-button {
+  background: crimson;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  margin-top: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.level-button {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.level-button.completed {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}

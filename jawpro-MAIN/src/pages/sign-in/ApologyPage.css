@@ -1,0 +1,288 @@
+:root {
+  --cosmic-light-bg:linear-gradient(to bottom right, #fce4ec, #e0f7fa, #f3e5f5);
+  --cosmic-light-text: #2d3748;
+  --cosmic-light-accent: #6e44ff;
+  --cosmic-light-border: rgba(110, 68, 255, 0.2);
+  --cosmic-light-card: rgba(255, 255, 255, 0.95);
+  
+  --cosmic-dark-bg:  linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  --cosmic-dark-text: #f8fafc;
+  --cosmic-dark-accent: #82B1FF;
+  --cosmic-dark-border: rgba(0, 179, 255, 0.3);
+  --cosmic-dark-card: rgba(26, 26, 46, 0.9);
+  
+  /* Shared */
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+/* Base Container */
+.apology-container-pageeee {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: var(--cosmic-light-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: var(--transition);
+}
+
+.dark .apology-container-pageeee {
+  background: var(--cosmic-dark-bg);
+}
+
+/* Content Box */
+.apology-content-pageeee {
+  background: var(--cosmic-light-card);
+  padding: 3rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--cosmic-light-border);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.dark .apology-content-pageeee {
+  background: var(--cosmic-dark-card);
+  border: 1px solid var(--cosmic-dark-border);
+  box-shadow: 0 8px 32px rgba(0, 179, 255, 0.1);
+}
+
+.apology-content-pageeee::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 68, 255, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.dark .apology-content-pageeee::before {
+  background: radial-gradient(circle, rgba(0, 179, 255, 0.1) 0%, transparent 70%);
+}
+
+/* Typography */
+.apology-title-pageeee {
+  font-size: 2.5rem;
+  color: var(--cosmic-light-accent);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.dark .apology-title-pageeee {
+  color: var(--cosmic-dark-accent);
+  text-shadow: 0 0 10px rgba(0, 179, 255, 0.3);
+}
+
+.apology-message-pageeee {
+  font-size: 1.2rem;
+  color: var(--cosmic-light-text);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+.dark .apology-message-pageeee {
+  color: var(--cosmic-dark-text);
+}
+
+.apology-message-pageeee b {
+  color: var(--cosmic-light-accent);
+  transition: var(--transition);
+}
+
+.dark .apology-message-pageeee b {
+  color: var(--cosmic-dark-accent);
+}
+
+/* Animation Container */
+.apology-animation-pageeee {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.apology-lottie-pageeee {
+  width: 100%;
+  height: auto;
+}
+
+/* Buttons Container */
+.apology-buttons-pageeee {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Login Button */
+.apology-login-btn-pageeee {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: var(--cosmic-light-accent);
+  border: 2px solid var(--cosmic-light-accent);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .apology-login-btn-pageeee {
+  color: var(--cosmic-dark-accent);
+  border-color: var(--cosmic-dark-accent);
+}
+
+.apology-login-btn-pageeee:hover {
+  background: var(--cosmic-light-accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(110, 68, 255, 0.4);
+}
+
+.dark .apology-login-btn-pageeee:hover {
+  background: var(--cosmic-dark-accent);
+  box-shadow: 0 5px 20px rgba(0, 179, 255, 0.5);
+}
+
+/* Signup Button */
+.apology-signup-btn-pageeee {
+  padding: 0.8rem 2rem;
+  background: var(--cosmic-light-accent);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(110, 68, 255, 0.3);
+}
+
+.dark .apology-signup-btn-pageeee {
+  background: var(--cosmic-dark-accent);
+  box-shadow: 0 4px 16px rgba(0, 179, 255, 0.3);
+}
+
+.apology-signup-btn-pageeee:hover {
+  background: var(--cosmic-light-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(110, 68, 255, 0.5);
+}
+
+.dark .apology-signup-btn-pageeee:hover {
+  background: var(--cosmic-dark-accent);
+  box-shadow: 0 8px 25px rgba(0, 179, 255, 0.6);
+}
+
+/* Button Hover Effects */
+.apology-login-btn-pageeee::after,
+.apology-signup-btn-pageeee::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  transition: var(--transition);
+}
+
+.apology-login-btn-pageeee:hover::after,
+.apology-signup-btn-pageeee:hover::after {
+  left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .apology-content-pageeee {
+    padding: 2rem;
+  }
+  
+  .apology-title-pageeee {
+    font-size: 2rem;
+  }
+  
+  .apology-buttons-pageeee {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apology-container-pageeee {
+    padding: 1rem;
+  }
+  
+  .apology-content-pageeee {
+    padding: 1.5rem;
+  }
+  
+  .apology-title-pageeee {
+    font-size: 1.8rem;
+  }
+  
+  .apology-message-pageeee {
+    font-size: 1rem;
+  }
+}
+
+
+.apology-login-btn-pageeee:hover {
+  background: linear-gradient(135deg, #b19cd9, #6a0dad);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(106, 13, 173, 0.4);
+}
+
+
+.apology-signup-btn-pageeee:hover {
+  background: linear-gradient(135deg, #6a0dad, #b19cd9);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(177, 156, 217, 0.4);
+}
+
+/* Button Pressed Effect */
+.apology-login-btn-pageeee:active,
+.apology-signup-btn-pageeee:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Animation */
+.apology-login-btn-pageeee::before,
+.apology-signup-btn-pageeee::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.6s ease-in-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.apology-login-btn-pageeee:hover::before,
+.apology-signup-btn-pageeee:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}

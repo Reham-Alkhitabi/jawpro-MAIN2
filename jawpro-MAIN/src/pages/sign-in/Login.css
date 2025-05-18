@@ -1,0 +1,484 @@
+:root {
+  --card-bg-light: rgba(255, 255, 255, 0.85);
+  --text-primary-light: #5A2D8C;
+  --text-secondary-light: #3A1D5E;
+  --text-tertiary-light: #6E44FF;
+  --border-light: rgba(110, 68, 255, 0.3);
+  --btn-light: #6E44FF;
+  --btn-hover-light: #5E2D9E;
+  --danger-light: #FF4D6D;
+
+  --card-bg-dark: rgba(18, 15, 35, 0.9);
+  --text-primary-dark: #C9B8FF;
+  --text-secondary-dark: #A78AFF;
+  --text-tertiary-dark: #8A63FF;
+  --border-dark: rgba(138, 99, 255, 0.4);
+  --btn-dark: #8A63FF;
+  --btn-hover-dark: #5E2D9E;
+  --danger-dark: #FF6B8B;
+
+  /* Shared */
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+/* Main Login Container*/
+.loginpage-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: url("./images/loginbg.png") no-repeat center center/cover;
+  transition: var(--transition);
+}
+
+/* Left Section - Lottie Animation  */
+.loginpage-animation-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 13, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.loginpage-animation-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 68, 255, 0.05) 0%, transparent 70%);
+  opacity: 0.3;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.dark .loginpage-animation-section::before {
+  background: radial-gradient(circle, rgba(138, 99, 255, 0.1) 0%, transparent 70%);
+}
+
+.loginpage-animation {
+  width: 80%;
+  height: 80%;
+  opacity: 0.89;
+  filter: drop-shadow(0 0 10px rgba(110, 68, 255, 0.3));
+  transition: var(--transition);
+}
+
+.dark .loginpage-animation {
+  filter: drop-shadow(0 0 15px rgba(138, 99, 255, 0.5));
+}
+
+/* Right Section - Login Form */
+.loginpage-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg-light);
+  border-left: 1px solid var(--border-light);
+  padding: 4.8rem;
+  transition: var(--transition);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .loginpage-form-section {
+  background: var(--card-bg-dark);
+  border-left: 1px solid var(--border-dark);
+}
+
+.loginpage-form-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 68, 255, 0.05) 0%, transparent 70%);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.dark .loginpage-form-section::before {
+  background: radial-gradient(circle, rgba(138, 99, 255, 0.1) 0%, transparent 70%);
+}
+
+/* Login Title */
+.loginpage-form-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary-light);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(90, 45, 140, 0.2);
+  position: relative;
+  transition: var(--transition);
+}
+
+.dark .loginpage-form-section h2 {
+  color: var(--text-primary-dark);
+  text-shadow: 0 2px 8px rgba(201, 184, 255, 0.3);
+}
+
+.loginpage-form-section h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--text-tertiary-light), transparent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.dark .loginpage-form-section h2::after {
+  background: linear-gradient(90deg, var(--text-tertiary-dark), transparent);
+}
+
+/* Form Elements */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 400px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 15px 0;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.dark .input-group {
+  background: rgba(18, 15, 35, 0.7);
+  border: 1px solid var(--border-dark);
+}
+
+.input-group .loginpage-input-icon {
+  font-size: 1.2rem;
+  color: var(--text-tertiary-light);
+  margin-right: 12px;
+  transition: var(--transition);
+}
+.show-password-btn{
+  color: var(--text-tertiary-light);
+
+}
+.dark .input-group .loginpage-input-icon {
+  color: var(--text-tertiary-dark);
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  flex: 1;
+  background: transparent;
+  color: var(--text-secondary-light);
+  transition: var(--transition);
+}
+
+.dark .input-group input {
+  color: var(--text-secondary-dark);
+}
+
+.input-group:focus-within {
+  border-color: var(--text-tertiary-light);
+  box-shadow: 0 0 0 2px rgba(110, 68, 255, 0.2),
+              inset 0 0 10px rgba(110, 68, 255, 0.1);
+}
+
+.dark .input-group:focus-within {
+  border-color: var(--text-tertiary-dark);
+  box-shadow: 0 0 0 2px rgba(138, 99, 255, 0.3),
+              inset 0 0 15px rgba(138, 99, 255, 0.2);
+}
+
+/* Login Button */
+button.loginpage-login-btn {
+  padding: 0.8rem 1.8rem;
+  background: var(--btn-light);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(110, 68, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.dark button.loginpage-login-btn {
+  background: var(--btn-dark);
+  box-shadow: 0 4px 16px rgba(138, 99, 255, 0.4);
+}
+
+button.loginpage-login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(110, 68, 255, 0.4);
+  background: var(--btn-hover-light);
+}
+
+.dark button.loginpage-login-btn:hover {
+  box-shadow: 0 8px 32px rgba(138, 99, 255, 0.6);
+  background: var(--btn-hover-dark);
+}
+
+button.loginpage-login-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  transition: var(--transition);
+}
+
+button.loginpage-login-btn:hover::after {
+  left: 100%;
+}
+
+/* Register Button*/
+button.loginpage-register-btn {
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  color: var(--text-tertiary-light);
+  border: 2px solid var(--text-tertiary-light);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.dark button.loginpage-register-btn {
+  color: var(--text-tertiary-dark);
+  border: 2px solid var(--text-tertiary-dark);
+}
+
+button.loginpage-register-btn:hover {
+  background: var(--text-tertiary-light);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(110, 68, 255, 0.3);
+}
+
+.dark button.loginpage-register-btn:hover {
+  background: var(--text-tertiary-dark);
+  box-shadow: 0 8px 32px rgba(138, 99, 255, 0.4);
+}
+
+/* Links */
+.forgot,
+.loginpage-register {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-tertiary-light);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.dark .forgot,
+.dark .loginpage-register {
+  color: var(--text-tertiary-dark);
+}
+
+.forgot:hover,
+.loginpage-register:hover {
+  color: var(--text-primary-light);
+  text-shadow: 0 0 8px rgba(110, 68, 255, 0.3);
+}
+
+.dark .forgot:hover,
+.dark .loginpage-register:hover {
+  color: var(--text-primary-dark);
+  text-shadow: 0 0 12px rgba(138, 99, 255, 0.5);
+}
+
+.forgot::after,
+.loginpage-register::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--text-tertiary-light);
+  transition: var(--transition);
+}
+
+.dark .forgot::after,
+.dark .loginpage-register::after {
+  background: var(--text-tertiary-dark);
+}
+
+.forgot:hover::after,
+.loginpage-register:hover::after {
+  width: 100%;
+}
+
+/* Separator*/
+.separator {
+  width: 80%;
+  max-width: 400px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+  margin: 2rem 0;
+  transition: var(--transition);  
+  border: 1px solid ;
+}
+
+.dark .separator {
+  background: linear-gradient(90deg, transparent, var(--border-dark), transparent);
+}
+
+/* Social Login */
+.social-text {
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  color: var(--text-secondary-light);
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.dark .social-text {
+  color: var(--text-secondary-dark);
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  color: var(--text-secondary-light);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .google {
+  background: rgba(18, 15, 35, 0.8);
+  color: var(--text-secondary-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.google:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: white;
+  color: var(--text-primary-light);
+}
+
+.dark .google:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(30, 25, 60, 0.9);
+  color: var(--text-primary-dark);
+}
+
+.google-icon {
+  font-size: 1.2rem;
+  color: var(--text-tertiary-light);
+  margin-right: 10px;
+  transition: var(--transition);
+}
+
+.dark .google-icon {
+  color: var(--text-tertiary-dark);
+}
+
+.google:hover .google-icon {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .loginpage-animation-section {
+    display: none;
+  }
+  
+  .loginpage-form-section {
+    border-left: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginpage-form-section {
+    padding: 2rem;
+  }
+  
+  .loginpage-form-section h2 {
+    font-size: 2rem;
+  }
+  
+  form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginpage-form-section {
+    padding: 1.5rem;
+  }
+  
+  .loginpage-form-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  form {
+    width: 95%;
+  }
+}
+
+
+/* Error Message */
+.error-message {
+  color: var(--danger-light);
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background: rgba(186, 12, 44, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid var(--danger-light);
+  text-align: center;
+}
+
+.dark .error-message {
+  color: var(--danger-dark);
+  background: rgba(255, 107, 139, 0.1);
+  border-left: 4px solid var(--danger-dark);
+}
